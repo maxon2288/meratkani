@@ -1,0 +1,421 @@
+<!doctype html>
+<html class="no-js" lang="ru">
+
+    <head>
+        {{> head/head head.defaults}}
+    </head>
+
+    <body class="page">
+        %=symbols=%
+
+        <div class="first-container">
+            {{> first/first-2}}
+            {{> header/header}}
+        </div>
+        
+        <div class="bread">
+                <div class="wrapper">
+                    <span>
+                        <a href="#">
+                            <span>Главная</span>
+                        </a>
+                    </span>
+            
+                    <span>
+                        {{Icon iconName="bread-arrow"}}
+                    </span>
+            
+                    <span>
+                        <a href="#">
+                            <span>Главная</span>
+                        </a>
+                    </span>
+
+                    <span>
+                        {{Icon iconName="bread-arrow"}}
+                    </span>
+            
+                    <span>
+                        <a href="#">
+                            <span>Главная</span>
+                        </a>
+                    </span>
+                </div>
+            </div>
+        
+        <div class="payment-tabs wrapper">
+            <ul class="payment-tab">
+                <li><a href="#tab-1-1">Проверка  личных  данных</a></li>
+                <li><a href="#tab-1-2">Формирование  счета</a></li>
+                <div>Оплата</div>
+            </ul>
+    
+            <div class="payment" id="tab-1-1">
+                <div class="m-content">
+                    <div class="wrapper">
+                        <div class="m-block p30">
+                            <div class="payment__title">
+                                    данные для выставления счетов:
+                            </div>
+                            <div class="payment__item">
+                                <b>ФИО:</b>  Иванов Иван Иванович
+                            </div>
+    
+                            <hr>
+    
+                            <div class="payment__title">
+                                данные для доставки:
+                            </div>
+    
+                            <div class="payment__item">
+                                <b>
+                                    ТК  
+                                </b>
+                                ПЭК
+                            </div>
+    
+                            <div class="payment__item">
+                                <b>
+                                        Фио:  
+                                </b>
+                                Иванов Иван Иванович.
+                            </div>
+    
+                            <div class="payment__item">
+                                <b>
+                                        Страна:  
+                                </b>
+                                Россия
+                            </div>
+    
+                            <div class="payment__item">
+                                <b>
+                                        Город:  
+                                </b>
+                                Москва
+                            </div>
+    
+                            <div class="payment__item">
+                                <b>
+                                        Телефон:  
+                                </b>
+                                8-952-787-67-17
+                            </div>
+    
+                            <div class="payment__item">
+                                <b>
+                                        Серия и номер паспорта:  
+                                </b>
+                                2215 856324
+                            </div>
+    
+                            <div class="payment__checks">
+                                <label class="form__checkbox">
+                                    <input type="checkbox" name="check">
+                                    <div><img src="%=static=%img/content/check.png" alt=""></div>
+            
+                                    <p>Ознакомился и согласен с Пользовательским соглашением, Публичной офертой , 
+                                            Условиями покупки и предзаказа интернет-магазина MERA </p>
+                                </label>
+            
+                                <label class="form__checkbox">
+                                    <input type="checkbox" name="check">
+                                    <div><img src="%=static=%img/content/check.png" alt=""></div>
+            
+                                    <p>Заказ временно не отправлять</p>
+                                </label>
+                            </div>
+    
+                            <div class="payment__buttons">
+                                <a href="#" class="m-button m-button-purp">Изменить</a>
+                                <a href="#" class="m-button">Далее</a>
+                            </div>
+    
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="payment" id="tab-1-2">
+                <div class="m-content">
+                    <div class="wrapper">
+                        <div class="m-block p30">
+
+                            <div class="payment__center-cont">
+                                <div class="doc">
+                                    <table>
+                                        <b>ИП Кульков Алексей Сергеевич</b>
+                                        <p>г. Нижний Новгодо. Пт-р Кораблестроителей дом №33 квартира 10</p>
+                                        <tr>
+                                            <td>ИИН 47821390908</td>
+                                            <td rowspan="2"></td>
+                                            <td>Сч. № 980412309824109214</td>
+                                        </tr>
+                                        <tr>
+                                            Покупка <br>
+                                            ИП КУЛЬКОВ АЛЕКСЕЙ СЕРГЕЕВИЧ
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="2">
+                                                Банк получателя <br>
+                                                АО "ТИНЬКОФФ БАНК"
+                                            </td>
+                                            <td>
+                                                БИК 093109321
+                                            </td>
+                                            <td>Сч. № 432903249032492</td>
+                                        </tr>
+                                    </table>
+
+                                    <h2>Счет № 015 от 15 мая 2018 г.</h2>
+                                    <p>Плательщик: ИП Наранов Сергей Сергеевич ИИН 2321834283284793</p>
+                                    <p>Грузополучатель: ИП Наранов Сергей Сергеевич ИИН 2321834283284793</p>
+
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                №
+                                            </td>
+                                            <td>
+                                                Наименвание товара
+                                            </td>
+                                            <td> 
+                                                Количество киллограмм 
+                                            </td>
+                                            <td>
+                                                Цена за киллограмм руб.
+                                            </td>
+                                            <td>
+                                                Сумма
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                1
+                                            </td>
+                                            <td>
+                                                Трикотажное полотно в ассортименте
+                                            </td>   
+                                            <td>
+                                                25
+                                            </td>
+                                            <td>
+                                                974,28
+                                            </td>
+                                            <td>
+                                                24 357,00
+                                            </td>
+
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                2
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>-</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                2
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>-</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                2
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>-</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                2
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>-</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                2
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>-</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                2
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>-</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                2
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>-</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                2
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>-</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                2
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>-</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                2
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>-</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                2
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>-</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                2
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>-</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                2
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>-</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                2
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>-</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                2
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>-</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                2
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>-</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                2
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>-</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                            </td>
+                                            <td>итого</td>
+                                            <td>25кг</td>
+                                            <td>всего к оплате:</td>
+                                            <td>24 357</td>
+                                        </tr>   
+                                    </table>
+                                    
+                                </div>
+    
+                                <div class="payment__checks">
+                                    
+                                </div>
+    
+                                <div class="payment__buttons payment__buttons-sb">
+                                    <a href="#" class="m-button m-button-purp">Изменить</a>
+                                    <a href="#" class="m-button">Далее</a>
+                                    <button class="m-button printButton">Печать</button>
+                                </div>
+                                
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{> footer/footer}}
+
+        <script src="%=static=%js/separate-js/svg4everybody.min.js"></script>
+        <script>svg4everybody();</script>
+
+        <!-- Main scripts. You can replace it, but I recommend you to leave it here     -->
+        <script src="%=static=%js/main%=hash=%%=min=%.js"></script>
+    </body>
+
+</html>
