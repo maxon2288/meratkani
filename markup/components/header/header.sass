@@ -2,6 +2,18 @@
     position: relative
     z-index: 100
     background-color: #fff
+    &__menu 
+        height: 60px
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+    &__meu-logo 
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+        align-items: center
+        img 
+            height: 60px;
     .drop-menu
         position: absolute
         top: 100%
@@ -80,6 +92,7 @@
             flex-direction: row
             width: 100%
             justify-content: space-between
+            position: relative
         &.fixed
             position: fixed
             left: 50%
@@ -115,6 +128,7 @@
                     visibility: visible
     &__menu-link
         display: flex
+        align-items: center 
         font-size: 18px
         font-family: "Segoe UI"
         color: rgb(0, 0, 0)

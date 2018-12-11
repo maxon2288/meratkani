@@ -30,6 +30,11 @@ __iconsData: {
             height: '9px'
         },
     
+        'check': {
+            width: '26px',
+            height: '26px'
+        },
+    
         'close': {
             width: '13px',
             height: '13px'

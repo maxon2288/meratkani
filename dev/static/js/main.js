@@ -3588,8 +3588,19 @@ $(document).ready(function(){
     
     
     $(".overlay").click(function() {
-        $(".modal, .overlay, .filter").removeClass("visible");
+        $(".popup, .overlay, .filter").removeClass("visible");
     });
+
+    $('.goods__item').click(function(e) {
+        e.preventDefault();
+        $('.popup, .overlay').addClass('visible');
+        var url = $(this).data('url');
+        $('.popup .reg-block__button').attr("data-url", url);
+        var url1 = $(".reg-block__button").data('url');
+        $('.reg-block__button').click(function () {
+            location.href = url1;
+        });
+    }); 
     
     
     var mySwiper = new Swiper('.main-slider', {
@@ -3869,15 +3880,13 @@ $(document).ready(function(){
     new WOW().init();
 
     $(document).ready(function() {
-        var curX = 300;
-        var xurY = 900;
         var minVal = $('.input-ot').data('min');
         var maxVal = $('.input-do').data('max');
         $("#flat-slider").slider({
             min: minVal,
             max: maxVal,
             range: true,
-            values: [curX, xurY],
+            values: [minVal , maxVal],
             slide: function( event, ui ) {
                 $( ".filter__price-result" ).text('Цена: ' + ui.values[ 0 ] +' руб. ' +  " - " + ui.values[ 1 ] + ' руб.' );
                 $(".input-ot").val(ui.values[ 0 ]);
@@ -3891,8 +3900,7 @@ $(document).ready(function(){
     });
     var scr = screen.width;
     
-    if ($(".header__menu-link").length < 8) {
-        $(".header__menu-toggle, .menu-open").css("display", "none")
+    if ($(".header__menu-link").length > 8) {
     } else {
         $(".header__menu-toggle, .menu-open").css("display", "flex")
     }
@@ -3908,9 +3916,9 @@ $(document).ready(function(){
         } else if(stWidth <= 1100 && stWidth >= 900){
             number = 3;
         } else if(stWidth <= 900 && stWidth >= 500){
-            number = 2;
+            number = 3;
         }else if(stWidth <= 500 && stWidth >= 320){
-            number = 1;
+            number = 2;
         } else {
             number = 1;
         }
@@ -3950,6 +3958,8 @@ $(document).ready(function(){
         }   
     });
     $(".basket-index").html('0');
+
+    $('.drop').innerWidth($(".header__menu").innerWidth());
     
     $('.filter__item-button').click(function(event){
         event.preventDefault();
@@ -3967,7 +3977,14 @@ $(document).ready(function(){
     });
     
     $(function () {
-        $(".callDrop").on('click', function (event) {
+        $(".callDrop").mouseenter(function (event) {
+            event.preventDefault();
+            var popup = $(this).attr('data-block');
+            // $('body').css('overflow', 'hidden');
+            // $('.overlay').addClass('visible');
+            $('.' + popup).toggleClass('visible');
+        });
+        $(".callDrop").mouseleave(function (event) {
             event.preventDefault();
             var popup = $(this).attr('data-block');
             // $('body').css('overflow', 'hidden');

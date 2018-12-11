@@ -8,36 +8,29 @@
 <body class="page">
 %=symbols=%
 
-        <div class="first">
-            <div class="first-grad"></div>
-            <div class="parralax">
-                <div class="parralax-1 m-img-cont">
-                    <img src="%=static=%img/content/parralax-1-2.png" alt="">
-                </div>
-        
-                <div class="parralax-2 m-img-cont">
-                    <img src="%=static=%img/content/parralax-2-2.png" alt="">
-                </div>
-        
-                <div class="parralax-3 m-img-cont">
-                    <img src="%=static=%img/content/parralax-3-2.png" alt="">
-                </div>
+    <div class="first">
+        <div class="first-grad"></div>
+        <div class="parralax">
+            <div class="parralax-1 m-img-cont">
+                <img src="%=static=%img/content/parralax-1-2.png" alt="">
             </div>
-            <div class="wrapper">
-                <div class="logo-container">
-                    <img src="../static/img/content/logo-1.png" alt="">
-                </div>
     
-                <div class="reg-block ">
-                    <div class="reg-block__title">
-                        Получить полный доступ к ценам 
-                        и эксклюзивным товарам
-                    </div>
+            <div class="parralax-2 m-img-cont">
+                <img src="%=static=%img/content/parralax-2-2.png" alt="">
+            </div>
     
-                    <a class="m-button" href="#">Регистрация</a>
-                </div>
+            <div class="parralax-3 m-img-cont">
+                <img src="%=static=%img/content/parralax-3-2.png" alt="">
             </div>
         </div>
+        <div class="wrapper">
+            <div class="logo-container">
+                <img src="../static/img/content/logo-1.png" alt="">
+            </div>
+
+            
+        </div>
+    </div>
     
     {{> header/header}}
 
@@ -189,7 +182,7 @@
                 {{> news-item/news-item}}
             </div>
         </div>
-    </div>
+    </div>  
     
     {{> footer/footer}}
 
@@ -199,7 +192,20 @@
     <!-- Main scripts. You can replace it, but I recommend you to leave it here     -->
     <script src="%=static=%js/main%=hash=%%=min=%.js"></script>
 
+    <div class="overlay "></div>
 
+    <div class="reg-block popup">
+        <div class="reg-block__title">
+            Получить полный доступ к ценам 
+            и эксклюзивным товарам
+        </div>
+
+        <a class="m-button" href="#">Регистрация</a>
+
+        <div class="reg-block-cont">
+            <a href="#" class="reg-block__button">Отмена</a>
+        </div>
+    </div>
 </body>
 
 </html>
