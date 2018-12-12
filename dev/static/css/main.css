@@ -6519,6 +6519,11 @@ a {
   margin-bottom: 5px;
 }
 
+.drop__item:hover {
+  color: #ff8f0b;
+  text-decoration: underline;
+}
+
 .slider {
   height: 610px;
   color: black;
@@ -6559,7 +6564,7 @@ a {
 .slider__title {
   font-size: 48px;
   font-family: "Segoe UI";
-  color: black;
+  color: white;
   font-weight: 500;
   text-align: center;
 }
@@ -9695,7 +9700,7 @@ input[type=number] {
   margin-bottom: 10px;
 }
 
-.modal.visible {
+.visible {
   opacity: 1;
   visibility: visible;
 }
@@ -9794,6 +9799,68 @@ input[type=number] {
 .doc table td {
   border: 1px solid black;
   text-align: center;
+}
+
+.predoplata {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-top: 40px;
+}
+
+.predoplata__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.predoplata__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 60px;
+  margin-bottom: 15px;
+}
+
+.predoplata__title {
+  color: black;
+  font-size: 22px;
+  margin-right: 30px;
+}
+
+.predoplata__cur {
+  border-radius: 50px;
+  color: #ff8f0b;
+  font-size: 20px;
+  -webkit-box-shadow: inset 0 5px 6px 0.5px #d2d2d2;
+          box-shadow: inset 0 5px 6px 0.5px #d2d2d2;
+  background-color: #fff;
+  height: 50px;
+  width: 200px;
+  font-weight: 500;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 25px;
 }
 
 .first {
@@ -11233,5 +11300,3 @@ input[type=number] {
   color: #676767;
   line-height: 2.5;
 }
-
-/*# sourceMappingURL=main.css.map */

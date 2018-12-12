@@ -118,6 +118,9 @@ a
     &__item 
         text-transform: none
         margin-bottom: 5px
+        &:hover 
+            color: $or 
+            text-decoration: underline
     
 
 .slider
@@ -147,7 +150,7 @@ a
     &__title
         font-size: 48px
         font-family: "Segoe UI"
-        color: rgb(0, 0, 0)
+        color: white
         font-weight: 500
         text-align: center
         @media screen and(max-width: 768px)
@@ -185,7 +188,6 @@ a
         flex-direction: column  
     &__button
         margin-top: 60px
-    
 .swiper-button-next,
 .swiper-button-prev
     background-image: url(../img/content/main-slider-nav.png)
@@ -1932,10 +1934,10 @@ input[type=number]
             height: 40px
             margin-bottom: 10px
     
-    &.visible 
-        opacity: 1
-        visibility: visible
 
+.visible 
+    opacity: 1
+    visibility: visible
 
 .settings__img
     overflow: hidden
@@ -1993,3 +1995,37 @@ input[type=number]
         td 
             border: 1px solid black
             text-align: center
+
+.predoplata
+    width: 100%
+    display: flex
+    justify-content: flex-end
+    margin-top: 40px
+    &__items 
+        display: flex
+        flex-wrap: wrap
+        width: 100%
+        justify-content: flex-end
+    &__item 
+        display: flex 
+        justify-content: space-between
+        align-items: center
+        margin-left: 60px
+        margin-bottom: 15px
+    &__title 
+        color: black
+        font-size: 22px
+        margin-right: 30px
+
+    &__cur 
+        border-radius: 50px
+        color: $or 
+        font-size: 20px
+        box-shadow: inset 0 5px 6px 0.5px #d2d2d2   
+        background-color: #fff
+        height: 50px
+        width: 200px  
+        font-weight: 500      
+        display: flex
+        align-items: center
+        padding-left: 25px

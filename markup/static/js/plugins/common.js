@@ -311,20 +311,31 @@ $(document).ready(function(){
     
     
     $(".lightgallery").lightGallery();
+
+
+
     
     $(".tabs__delete").click(function() {
         var it = $(this);
-        // $.ajax({
-        //     // type: "POST", //Метод отправки
-        //     // url: '/mail.php', //путь до php фаила отправителя
-        //     // cache: false,
-        //     // processData: false,
-        //     // contentType: false,
-        //     success: function() {
-        //         it.closest("tr").addClass('invisible');
-        //     }
-        // });
+        var trId = it.closest("tr").data("id");
+        $('.modal-tr').addClass("visible");
+        $('.modal-tr').attr("data-id", trId);
+
+        
     });
+
+    $('.modal-ok').click(function() {
+        $.ajax({
+            success: function() {   
+            }
+        });
+    });
+    $(".modal-ne-ok").click(function (e) {
+        e.preventDefault();
+        $(".modal").removeClass('visible');
+    });
+
+
     
     var mySwiper = new Swiper('.deliv-slider', {
         speed: 500,
