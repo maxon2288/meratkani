@@ -6426,6 +6426,10 @@ a {
   position: static;
 }
 
+.call-link {
+  cursor: pointer;
+}
+
 .menu-open {
   display: none !important;
 }
@@ -6444,6 +6448,23 @@ a {
   }
 }
 
+.header__menu-all {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-left: 20px;
+}
+
+@media screen and (max-width: 425px) {
+  .header__menu-all {
+    margin-left: 0;
+  }
+}
+
 .drop {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6452,11 +6473,11 @@ a {
       flex-wrap: wrap;
   position: absolute;
   top: 94%;
-  width: 100%;
   background-color: white;
   padding: 40px;
   font-weight: 400;
   opacity: 0;
+  min-width: 100%;
   visibility: hidden;
   -webkit-transition: 0.3s;
   transition: 0.3s;

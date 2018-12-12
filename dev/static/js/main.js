@@ -3591,7 +3591,7 @@ $(document).ready(function(){
         $(".popup, .overlay, .filter").removeClass("visible");
     });
 
-    $('.goods__item').click(function(e) {
+    $('.goods__item-noreg').click(function(e) {
         e.preventDefault();
         $('.popup, .overlay').addClass('visible');
         var url = $(this).data('url');
@@ -3599,6 +3599,7 @@ $(document).ready(function(){
         var url1 = $(".reg-block__button").data('url');
         $('.reg-block__button').click(function () {
             location.href = url1;
+
         });
     }); 
     
@@ -3809,7 +3810,7 @@ $(document).ready(function(){
         });
         
         $(function() {
-            var el = $('.parralax-2');
+             el = $('.parralax-2');
             $(window).on('scroll', function () {
                 var scroll = $(document).scrollTop();
                 el.css({
@@ -3959,8 +3960,8 @@ $(document).ready(function(){
     });
     $(".basket-index").html('0');
 
-    $('.drop').innerWidth($(".header__menu").innerWidth());
-    
+    $('.drop').innerWidth($(".header__menu-all").innerWidth());
+
     $('.filter__item-button').click(function(event){
         event.preventDefault();
         
@@ -3992,7 +3993,11 @@ $(document).ready(function(){
             $('.' + popup).toggleClass('visible');
         });
     });
-
+    $(".call-link").click(function () {
+        var it = $(this);
+        var itClick = it.data('href');
+        location.href = itClick;
+    });
 
     ///--------------------
     /// Калькулятор корзины

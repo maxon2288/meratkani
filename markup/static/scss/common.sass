@@ -72,6 +72,9 @@ a
 
 .header__menu-link 
     position: static
+
+.call-link 
+    cursor: pointer
 .menu-open 
     display: none !important
     @media screen and (max-width: 1024px)
@@ -79,16 +82,24 @@ a
 .header__menu-logo 
     @media screen and (max-width: 425px)
         display: none
+.header__menu-all 
+    display: flex
+    width: 100%
+    justify-content: space-between
+    margin-left: 20px
+    @media screen and (max-width: 425px)
+        margin-left: 0
 .drop
     display: flex
     flex-wrap: wrap 
     position: absolute  
     top: 94%   
-    width: 100%
     background-color: white
     padding: 40px
     font-weight: 400
     opacity: 0
+    min-width: 100%
+        
     visibility: hidden
     transition: 0.3s;
     max-height: 100vh
