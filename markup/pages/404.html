@@ -1,0 +1,34 @@
+<!doctype html>
+<html class="no-js" lang="ru">
+
+    <head>
+        {{> head/head head.defaults}}
+    </head>
+
+    <body class="page">
+        %=symbols=%
+
+        <div class="error-f-cont">
+            <img src="%=static=%img/content/logo3.png" alt="">
+            <div class="error-f">
+                404
+            </div>
+            <div class="m-title error-f-desc">
+                извините, такой страницы не существует
+            </div>
+            <div class="m-desc">
+                Проверьте запрос или начните сначала
+            </div>
+            <a href="index.html" class="m-button">
+                Вернуться на главную
+            </a>
+        </div>
+            
+            <script src="%=static=%js/separate-js/svg4everybody.min.js"></script>
+            <script>svg4everybody();</script>
+
+        <!-- Main scripts. You can replace it, but I recommend you to leave it here     -->
+        <script src="%=static=%js/main%=hash=%%=min=%.js"></script>
+    </body>
+
+</html>

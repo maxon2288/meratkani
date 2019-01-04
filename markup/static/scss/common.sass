@@ -1092,7 +1092,7 @@ a
     &__buttons
         display: flex
         flex-direction: column
-        align-items: flex-end
+        align-items: flex-start 
         max-width: 220px
         .m-button
             margin-bottom: 10px
@@ -1473,7 +1473,6 @@ ul
         overflow-x: auto
         border-radius: 23px
     &__table
-        box-shadow: 0px 12px 17.85px 3.15px rgba(0, 0, 0, 0.13)
         width: 100% 
         overflow: hidden
         border-radius: 23px
@@ -1534,7 +1533,8 @@ ul
                 background-color: #a7b3ff
             &.hard-red 
                 background-color: #ff7575
-            
+            .m-button 
+                min-width: 160px;
             .m-img-cont
                 min-width: 90px
                 max-width: 90px
@@ -2029,3 +2029,108 @@ input[type=number]
         display: flex
         align-items: center
         padding-left: 25px
+
+
+
+.error-f
+    display: flex
+    align-items: center
+    justify-content: center
+    margin-bottom: 20px
+    color:  #f19eca
+    text-align: center
+    font-size: 160px 
+    line-height: 100px
+    margin: 40px 0
+    font-weight: bold
+    &-cont 
+        height: 100vh
+        display: flex
+        flex-direction: column;
+        align-items: center
+        justify-content: center
+        .m-desc 
+            text-align: center
+            color: #e49e25
+            font-weight: 500
+            margin-top: 10px
+        .m-button 
+            margin-top: 30px
+.error-f-desc 
+    margin-bottom: 1px
+    font-size: 26px 
+    color: #943fdc
+    font-weight: bold
+    display: flex
+    align-items: center
+    justify-content: center
+    text-align: center
+
+.humburger 
+    display: flex
+    align-items: center
+    width: 100%;
+    justify-content: space-between
+    position: relative
+    svg 
+        width: 40px
+        height: 40px
+
+
+.header-mobile-container 
+    display: flex
+    flex-wrap: wrap;
+    margin-right: 10px
+.humburger-open 
+    display: none
+@media screen and (max-width: 768px) 
+    .humburger-open
+        display: flex
+    .search-field 
+        display: flex
+        width: 100vw;
+        height: 100%;
+        justify-content: center
+        top: 100%;
+        left: 0
+        height: 1000px
+        background-color: #fff
+        position: fixed
+        input 
+            position: absolute
+    .header-mobile-container-1 
+        margin-left: 15px
+        display: flex
+        max-width: 100%
+        width: 100%
+        flex-wrap: wrap
+        background-color: #fff
+    .header-mobile-container 
+        margin-right: 0
+
+    .header__right 
+        display: none !important    
+        
+    .menu-open 
+        display: none !important
+    .header__menu-all 
+        position: absolute
+        top: 100%
+        left: 0
+        flex-direction: column    
+        z-index: 0
+        background-color: #fff
+        width: 250px;
+        padding: 10px;
+        opacity: 0
+        visibility: hidden
+        &.visible
+            opacity: 1
+            visibility: visible
+        .header__menu-link
+            margin-bottom: 10px    
+        .drop 
+            z-index: 1  
+    .sign-container
+        margin-bottom: 10px
+    

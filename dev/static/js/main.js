@@ -3451,24 +3451,55 @@ $(document).ready(function(){
     
         errorPlacement: function (error, element) {},
     
-        // submitHandler: function() {
-        //     // var form_data = $(this).serialize(); //собераем все данные из формы
-        //     $.ajax({
-        //         // type: "POST", //Метод отправки
-        //         // url: '/mail.php', //путь до php фаила отправителя
-        //         // data: form_data,
-        //         // cache: false,
-        //         // processData: false,
-        //         // contentType: false,
-        //         success: function() {
-        //             $("input, textarea").val('');
-        //             $(".modal.modal-feedback, .overlay").addClass('visible');                
-        //             setTimeout (function(){
-        //                 $(".modal.modal-feedback, .overlay").removeClass('visible');
-        //              }, 3000);
-        //         }
-        //     });
-        // },
+        submitHandler: function() {
+            $("input, textarea").val('');
+            $(".modal.modal-feedback, .overlay").addClass('visible');                
+            setTimeout (function(){
+                $(".modal.modal-feedback, .overlay").removeClass('visible');
+            }, 5000);
+        },
+    });
+    $('.callback').validate({
+        rules: {
+            mail: {
+                required: true,
+                email: true,
+            },
+            sur: {
+                required: true,
+            },
+            name: {
+                required: true,
+            },
+            father: {
+                required: true,
+            },
+            textarea: {
+                required: true,
+                minlength: 14,
+                maxlength: 1000
+            },
+            phone: {
+                required: true,
+            },
+            url: {
+                required: true,
+            },
+            req: {
+                required: true,            
+            },
+            },
+    
+        errorPlacement: function (error, element) {},
+    
+        submitHandler: function() {
+            $("input, textarea").val('');
+            $(".modal.modal-feedback, .overlay").addClass('visible');                
+            setTimeout (function(){
+                $(".modal.modal-feedback, .overlay").removeClass('visible');
+            }, 5000);
+            console.log('fsdafsdafsd');
+        },
     });
     
     $('.form-reg').validate({
@@ -3597,7 +3628,8 @@ $(document).ready(function(){
         var url = $(this).data('url');
         $('.popup .reg-block__button').attr("data-url", url);
         var url1 = $(".reg-block__button").data('url');
-        $('.reg-block__button').click(function () {
+        $('.reg-block__button').click(function (e) {
+            e.preventDefault();
             location.href = url1;
 
         });
@@ -3731,10 +3763,7 @@ $(document).ready(function(){
     
     
     $(".lightgallery").lightGallery();
-
-
-
-    
+        
     $(".tabs__delete").click(function() {
         var it = $(this);
         var trId = it.closest("tr").data("id");
@@ -3917,33 +3946,22 @@ $(document).ready(function(){
         $(".header__menu-toggle, .menu-open").css("display", "flex")
     }
     
-    $('.header__menu .wrapper .menu-open').append('<div class="header__menu-toggle"></div>');
-        var number = 0;
-        var stWidth = (screen && screen.width);
+    $(".humburger-open").click(function() {
+        $(".header__menu-all").toggleClass('visible');
+    });
+
+    if($(window).width() < 768) {
+        var html = $(".sign-container-1").html();
+        $(html).appendTo('.sign-container');
+        $(html).remove();   
+        var htmla = $(".header-mobile-container").html();
+        $(htmla).appendTo('.header-mobile-container-1');
+        $(html).remove();
+        $(".search input").wrap("<div class='search-field'></div>");
+
         
-        if(stWidth >= 1300){
-            number = 5;
-        } else if(stWidth <= 1100 && stWidth >= 1100){
-            number = 4;
-        } else if(stWidth <= 1100 && stWidth >= 900){
-            number = 3;
-        } else if(stWidth <= 900 && stWidth >= 500){
-            number = 3;
-        }else if(stWidth <= 500 && stWidth >= 320){
-            number = 2;
-        } else {
-            number = 1;
-        }
-        $('.header__menu .header__menu-link').each(function () {
-            if($(this).index() > number){
-                $(this).appendTo('.header__menu-toggle');
-            }
-    });
-    
-    $(".menu-open").click(function() {
-        $(".header__menu-toggle").toggleClass('vis')
-    });
-    
+        
+    }
     
     $(".filter__open").click(function() {
         $(".filter, .overlay").addClass("visible")
@@ -4090,3 +4108,5 @@ $(document).ready(function(){
         window.print()
     });
 });
+
+//# sourceMappingURL=main.js.map

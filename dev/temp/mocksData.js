@@ -70,6 +70,11 @@ __iconsData: {
             height: '483.3px'
         },
     
+        'humb': {
+            width: '512px',
+            height: '512px'
+        },
+    
         'menu': {
             width: '512px',
             height: '512px'
@@ -113,6 +118,9 @@ __iconsData: {
 },
 
 __pages: [{
+                name: '404',
+                href: '404.html'
+             },{
                 name: 'about',
                 href: 'about.html'
              },{

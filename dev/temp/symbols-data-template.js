@@ -45,6 +45,11 @@ __iconsData: {
             height: '483.3px'
         },
     
+        'humb': {
+            width: '512px',
+            height: '512px'
+        },
+    
         'menu': {
             width: '512px',
             height: '512px'
