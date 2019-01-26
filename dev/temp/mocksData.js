@@ -175,6 +175,9 @@ __pages: [{
                 name: 'product',
                 href: 'product.html'
              },{
+                name: 'recovery',
+                href: 'recovery.html'
+             },{
                 name: 'reg',
                 href: 'reg.html'
              },{

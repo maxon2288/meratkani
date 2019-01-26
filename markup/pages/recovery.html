@@ -1,0 +1,60 @@
+<!doctype html>
+<html class="no-js" lang="ru">
+
+    <head>
+        {{> head/head head.defaults}}
+    </head>
+
+    <body class="page">
+        %=symbols=%
+
+        <div class="first-container">
+            {{> first/first-2}}
+            {{> header/header}}
+            {{> bread/bread-1}}
+
+        </div>
+
+
+        <div class="m-content">
+            <div class="wrapper">
+                <div class="m-block p30">
+                    <form action="#" class="recovery">
+                        <div class="recovery__title">
+                                Чтобы восстановить пароль, введите ваш Email или номер телефона:
+                        </div>
+                        <div class="recovery__item">
+                            <label class="form__radio">
+                                <input type="radio" class="recovery__block-1" checked name="check" value='email-field'>
+                                <div></div>
+                                <p class="ml10">Email:</p>
+                            </label>
+                            <input type="text" name="email" class="m-field r-field email-field">
+                            
+                        </div>
+                        <div class="recovery__item">
+                            <label class="form__radio">
+                                <input type="radio" class="recovery__block-1" name="check" value='phone-field'>
+                                <div></div>
+                                <p class="ml10">Номер телефона:</p>
+                            </label>
+                            <input type="text" name="phone" class="m-field r-field phone-field" disabled>
+
+                            
+                        </div>
+                        <button class="m-button">Восстановить пароль</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        {{> footer/footer}}
+
+        <script src="%=static=%js/separate-js/svg4everybody.min.js"></script>
+        <script>svg4everybody();</script>
+
+        <!-- Main scripts. You can replace it, but I recommend you to leave it here     -->
+        <script src="%=static=%js/main%=hash=%%=min=%.js"></script>
+    </body>
+
+</html>

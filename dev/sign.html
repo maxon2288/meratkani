@@ -136,12 +136,29 @@
             
                             
                             <div class="header-mobile-container">
-                                <form action="#" class="search">
-                                    <input name="search" class="search__field m-field" placeholder="поиск">
-                                    <!-- <button href="#" class="search__button"> -->
+                                <div class="search-desctop-container">
+                                    <!-- <form action="#" class="search search-mobile">
+                                        <input name="search" class="search__field m-field" placeholder="поиск">
+                                        <button class="search__button">
+                                            <img src="../static/img/content/search.png" class="button-open" alt="">
+                                        </button>
+                                    </form> -->
+                                    <form action="#" class="search seacrh-mobile">
+                                        <input name="search" class="search__field m-field" placeholder="поиск">
+                                        <button class="search__button">
+                                            <img src="../static/img/content/search.png" class="button-open" alt="">
+                                        </button>
+                                    </form> 
+                                </div>
+            
+                                <div class="search_mobile">
+                                    <div class="search_mobile__open seacrh-open">
                                         <img src="../static/img/content/search.png" class="button-open" alt="">
-                                    <!-- </button> -->
-                                </form>
+                                    </div>
+                                    <div class="search_mobile__container">
+            
+                                    </div>
+                                </div>
                                 
                                 <div class="header__basket">
                                     <a href="#">
@@ -163,7 +180,6 @@
                                     </div>
                                 </div>
                             </div>
-            
             
                             
                         </div>
@@ -441,27 +457,26 @@
                         <form action="/ " class="form-sign">
                             <div class="form__title">
                                 Авторизация на сайте
-                            </div>
+                            </div>  
 
                             <div class="require form__block">
-                                
                                 <p>Логин*</p>
-                                <input type="mail" name="mail" class="m-field">
+                                <input type="text" name="mail" class="m-field">
                             </div>
 
                             <div class="require form__block">
-                                
                                 <p>Пароль*</p>
                                 <input type="password" name="password" class="m-field">
+                                <a href="#" class="link-lost">
+                                    Забыли пароль?
+                                </a>
                             </div>
 
                             <div class="form__row">
                                 <label class="form__checkbox">
                                     <input type="checkbox" name="check">
                                     <div><img src="/static/img/content/check.png" alt=""></div>
-    
                                     <p>Запомнить меня</p>
-    
                                 </label>
     
                                 <button class="m-button">
@@ -476,7 +491,7 @@
                             <div class="html">
                                 <div class="form__title">Регистрация нового пользователя</div>
 
-                                <b>Удобно и легко!
+                                <b class="mb20">Удобно и легко!
                                 </b>
 
                                 <ul>
@@ -647,6 +662,17 @@
                         Оставить
                     </a>
                 </div>
+            </div>
+        </div>
+        
+        <div class="popup popup-basket">
+            <div class="popup-basket__title">Товар добавлен в корзину!</div>
+            <div class="popup-basket__img">
+                <img src="/static/img/content/popup-nasket-img.png" alt="">
+            </div>
+            <div class="popup-basket__buttons">
+                <a href="#" class="popup-basket__button m-button purple">Продолжить покупки</a>
+                <a href="#" class="popup-basket__button m-button">Перейти в корзину</a>
             </div>
         </div>
         

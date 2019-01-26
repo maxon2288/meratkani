@@ -39,72 +39,119 @@ $(document).ready(function(){
             }, 5000);
         },
     });
-    $('.callback').validate({
+    $('.recovery').validate({
         rules: {
-            mail: {
+            email: {
                 required: true,
                 email: true,
             },
-            sur: {
-                required: true,
-            },
-            name: {
-                required: true,
-            },
-            father: {
-                required: true,
-            },
-            textarea: {
-                required: true,
-                minlength: 14,
-                maxlength: 1000
-            },
             phone: {
                 required: true,
+
             },
-            url: {
-                required: true,
-            },
-            req: {
-                required: true,            
-            },
-            },
+        },
     
         errorPlacement: function (error, element) {},
     
         submitHandler: function() {
             $("input, textarea").val('');
-            $(".modal.modal-feedback, .overlay").addClass('visible');                
-            setTimeout (function(){
-                $(".modal.modal-feedback, .overlay").removeClass('visible');
-            }, 5000);
-            console.log('fsdafsdafsd');
         },
     });
+    $('.search').each(function() {
+        var it = $(this);
+        it.validate({
+            rules: {
+                search: {
+                    required: true,
+                },
+            },
+        
+            errorPlacement: function (error, element) {},
+        
+            submitHandler: function() {
+
+            },
+        });
+    });
+    $('.callback').each(function() {
+        var it = $(this);
+        it.validate({
+
+            rules: {
+                mail: {
+                    required: true,
+                    email: true,
+                },
+                sur: {
+                    required: true,
+                },
+                name: {
+                    required: true,
+                },
+                father: {
+                    required: true,
+                },
+                textarea: {
+                    required: true,
+                    minlength: 14,
+                    maxlength: 1000
+                },
+                phone: {
+                    required: true,
+                },
+                url: {
+                    required: true,
+                },
+                req: {
+                    required: true,            
+                },
+                },
+        
+            errorPlacement: function (error, element) {},
+        
+            submitHandler: function() {
+                $("input, textarea").val('');
+                $(".modal.modal-feedback, .overlay").addClass('visible');                
+                setTimeout (function(){
+                    $(".modal.modal-feedback, .overlay").removeClass('visible');
+                }, 5000);
+
+            },
+        });
+    })
     
     $('.form-reg').validate({
         rules: {
             mail: {
-                required: true,
+                required: false,
                 email: true,
             },
             sur: {
-                required: true,
+                required: false,
             },
             name: {
-                required: true,
+                required: false,
             },
             father: {
-                required: true,
+                required: false,
             },
             phone: {
-                required: true,
+                required: false,
             },
             url: {
-                required: true,
+                required: false,
             },
             req: {
-                required: true,            
+                required: false,            
+            },
+            name_company: {
+                required: false,
+            },
+            iin_company: {
+                required: false,
+            },
+            url_company: {
+                required: false,
             },
             text: {
                 required: false,
@@ -139,7 +186,7 @@ $(document).ready(function(){
         // });
     });
     
-    $('.form-sign, .form-profile').validate({
+    $('.form-sign').validate({
         rules: {
             mail: {
                 required: true,
@@ -169,7 +216,7 @@ $(document).ready(function(){
         },
     
         errorPlacement: function (error, element) {},
-    
+        
         // submitHandler: function() {
         //     var form_data = $(this).serialize(); //собераем все данные из формы
         //     $('input, textarea').val('');
@@ -286,61 +333,45 @@ $(document).ready(function(){
     //     }
     // });
     
-    $('.yur').change(function () {
-        if ($(this).val() === 'ur') {
-            $(".more-input").addClass("visible");
-            $(".more-radio .preds").prop('checked', false);
-        } else {
-            $(".more-input").removeClass("visible");
-            $(".more-input input").val('');
-            $(".more-input input").removeClass('valid');
-            $(".more-input input").removeClass('invalid');
-    
-            $(".more-link input").val('');
-            $(".more-link").removeClass("visible");
-            $(".more-link input").removeClass('valid');
-            $(".more-link input").removeClass('invalid');
-        }
-    });
-
-    $(".tkKit-input").change(function () {
-        if ($(this).val() === 'tkKit') {
-            $('.tkKit').addClass('vis');
-        } else {
-            $('.tkKit').removeClass('vis');
-        }
-    });
-    
-    $('.yur').change(function () {
-        if ($(this).val() === 'chas') {
-            $(".more-radio").addClass("visible");
-        } else {
-            $(".more-radio").removeClass("visible");
-            $(".more-radio .preds").prop('checked', false);
-            $(".more-link input").val('');
-            $(".more-link").removeClass("visible");
-            $(".more-link input").removeClass('valid');
-            $(".more-link input").removeClass('invalid');
-        }
-    });
-    
-    $('.preds').change(function () {
-        if ($(this).val() === 'preds') {
-            $(".more-link").addClass("visible");
-        } else {
-            $(".more-link input").val('');
-            $(".more-link").removeClass("visible");
-            $(".more-link input").removeClass('valid');
-            $(".more-link input").removeClass('invalid');
-        }
-    });
     
     $( ".payment-tabs" ).tabs({
         hide: { effect: "fade", duration: 150 },
         show: { effect: "fade", duration: 150 },    
     });
-    
-    
+
+    $(".check").change(function() {
+        var private = $(this).attr("value");
+        var privateContent = $(".private-content").data("open");
+        if (privateContent == private) {
+            $(".private-content").addClass("visible");
+            $(".private-content input").addClass("r-field");
+        } else {
+            $(".private-content").removeClass("visible")
+            $(".private-content input").removeClass("r-field");
+        }
+
+        var legal = $(this).attr("value");
+        var legalContent = $(".legal-content").data("open");
+        if (legalContent == legal) {
+            $(".legal-content").addClass("visible")
+            $(".legal-content .m-fields").addClass("r-field");
+        } else { 
+            $(".legal-content").removeClass("visible")
+            $(".legal-content .m-fields").removeClass("r-field");
+
+        }
+
+
+        rfield();
+
+        if(getFillInput())
+        {
+            $(".edit-form-submit").prop("disabled", false);   
+        }
+        else {
+            $(".edit-form-submit").prop("disabled", true);    
+        }
+    });
     
     $(".lightgallery").lightGallery();
         
@@ -349,8 +380,6 @@ $(document).ready(function(){
         var trId = it.closest("tr").data("id");
         $('.modal-tr').addClass("visible");
         $('.modal-tr').attr("data-id", trId);
-
-        
     });
 
     $('.modal-ok').click(function() {
@@ -364,7 +393,18 @@ $(document).ready(function(){
         $(".modal").removeClass('visible');
     });
 
+    $(".recovery__block").click(function() {
+    
+    })
+    $(".recovery__block-1").click(function() {
+        var it = $(this);
+        $('.r-field').prop("disabled", true);
+        $('.' + it.val()).prop("disabled", false);
+        $(".r-field").removeClass('valid');
+        $(".r-field").removeClass('error');
+        $(".r-field").val('');
 
+    })
     
     var mySwiper = new Swiper('.deliv-slider', {
         speed: 500,
@@ -530,7 +570,7 @@ $(document).ready(function(){
         $(".header__menu-all").toggleClass('visible');
     });
 
-    if($(window).width() < 768) {
+    if($(window).width() <= 768) {
         var html = $(".sign-container-1").html();
         $(html).appendTo('.sign-container');
         $(html).remove();   
@@ -538,12 +578,30 @@ $(document).ready(function(){
         $(htmla).appendTo('.header-mobile-container-1');
         $(html).remove();
         $(".search input").wrap("<div class='search-field'></div>");
-
-        
-        
+        var htmlb = $(".search-desctop-container").html();
+        $(htmlb).appendTo('.search_mobile__container');
+        $('.search').each(function() {
+            var it = $(this);
+            it.validate({
+                rules: {
+                    search: {
+                        required: true,
+                    },
+                },
+            
+                errorPlacement: function (error, element) {},
+            
+                submitHandler: function() {
+                },
+            });
+        });
     }
+
+    $(".seacrh-open").click(function() {
+        $(".seacrh-mobile").toggleClass("visible");
+    });
     
-    $(".filter__open").click(function() {
+    $(".filter__open").click(function() {   
         $(".filter, .overlay").addClass("visible")
     });
         
@@ -585,6 +643,44 @@ $(document).ready(function(){
         //     }
         // });
     });
+
+    var countinput = 0;
+    $(".edit-form-submit").prop("disabled", true);   
+
+    rfield();
+
+    function rfield()
+    {
+        $(".r-field").each(function() {
+            var it = $(this);
+            countinput++;
+
+            it.change(function() {
+                if(getFillInput())
+                {
+                    $(".edit-form-submit").prop("disabled", false);   
+                }
+                else {
+                    $(".edit-form-submit").prop("disabled", true);    
+                }
+            }); 
+        })
+    }
+
+    function getFillInput()
+    {
+        var fillable = 0;
+        countinput = 0;
+        //console.log(countinput);
+        $(".r-field").each(function() {
+            countinput++;
+            if($(this).val().length >= 3) {
+                fillable++;
+            }
+        });  
+        
+        return fillable == countinput;
+    }
     
     $(function () {
         $(".callDrop").mouseenter(function (event) {
