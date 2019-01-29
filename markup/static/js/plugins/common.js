@@ -653,11 +653,24 @@ $(document).ready(function(){
             $(".tkKit").addClass("visible");
             $(".tkKit").find(".m-field").addClass("r-field");
             
+        } else {
+            $(".tkKit").removeClass("visible");
+            $(".tkKit").find(".m-field").removeClass("r-field");
         }
         $(".edit-form-submit").prop("disabled", true);
         rfield();
     })
     rfield();
+
+    // $(".reg-check").click(function() {
+    //     var it = $(this);
+    //     if(it.val() == "tkKit") {
+    //         rfield();
+            
+    //     }else {
+    //         it.removeClass()
+    //     }
+    // });
 
     function rfield()
     {
@@ -694,9 +707,7 @@ $(document).ready(function(){
         //     $(".edit-form-submit").prop("disabled", true);
         // }
     }
-    $(".reg-check").click(function() {
-        rfield();
-    })
+    
     
     // for (var i = 0; i < project_images.length; i++) {
     //     result.append(`<input type="hidden" name="projects[][photos]["${i}"] value="${ project_images[i]['photo_id'] }" >`);
