@@ -644,16 +644,38 @@ $(document).ready(function(){
         // });
     });
 
+
+
     var countinput = 0;
     $(".edit-form-submit").prop("disabled", true);   
-
+    $(".tkKit-input").click(function() {
+        if($(this).val() == "tkKit") {
+            $(".tkKit").addClass("visible");
+            $(".tkKit").find(".m-field").addClass("r-field");
+            
+        }
+        $(".edit-form-submit").prop("disabled", true);
+        rfield();
+    })
     rfield();
 
     function rfield()
     {
+        $(".r-field, .reg-check").each(function() {
+            var it = $(this);
+
+            it.change(function() {
+                if(getFillInput() && $(".reg-check").is(":checked"))
+                {
+                    $(".edit-form-submit").prop("disabled", false);   
+                }
+                else {
+                    $(".edit-form-submit").prop("disabled", true);    
+                }
+            }); 
+        })
         $(".r-field").each(function() {
             var it = $(this);
-            countinput++;
 
             it.change(function() {
                 if(getFillInput())
@@ -665,7 +687,20 @@ $(document).ready(function(){
                 }
             }); 
         })
+        // if($(".reg-check").is(":checked")){
+        //     $(".edit-form-submit").prop("disabled", false);
+
+        // } else {
+        //     $(".edit-form-submit").prop("disabled", true);
+        // }
     }
+    $(".reg-check").click(function() {
+        rfield();
+    })
+    
+    // for (var i = 0; i < project_images.length; i++) {
+    //     result.append(`<input type="hidden" name="projects[][photos]["${i}"] value="${ project_images[i]['photo_id'] }" >`);
+    // }
 
     function getFillInput()
     {
@@ -679,8 +714,11 @@ $(document).ready(function(){
             }
         });  
         
+        
         return fillable == countinput;
     }
+
+    
     
     $(function () {
         $(".callDrop").mouseenter(function (event) {
