@@ -649,7 +649,7 @@ $(document).ready(function(){
     var countinput = 0;
     $(".edit-form-submit").prop("disabled", true);   
     $(".tkKit-input").click(function() {
-        if($(this).val() == "tkKit") {
+        if($(this).val() == "2") {
             $(".tkKit").addClass("visible");
             $(".tkKit").find(".m-field").addClass("r-field");
             
